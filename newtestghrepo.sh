@@ -25,6 +25,10 @@ GIT_URL=$(curl -s -H "Accept: application/vnd.github.v3+json" \
   https://api.github.com/repos/$GITHUB_USERNAME/$repoName | jq -r '.clone_url')
 
 # Add remote and push
-git remote add origin "$GIT_URL"
-git push -u origin main
+if git remote | grep -q origin; then
+	git remote set-url origin "&GIT_URL"
+else
+	git remote add origin "$GIT_URL"
+fi
+	git push -u origin main
 
