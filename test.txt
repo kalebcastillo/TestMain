@@ -1,0 +1,2 @@
+Hi i am editing this file
+I am adding a second line to this file to check on the functions of git commit
