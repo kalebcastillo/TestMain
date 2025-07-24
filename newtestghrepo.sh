@@ -7,10 +7,6 @@ while [ -z "$repoName" ]; do
   read -r -p "Repository name: " repoName
 done
 
-# GitHub credentials (set as env variables for security)
-GITHUB_USERNAME="your-username"
-GITHUB_TOKEN="your-personal-access-token"
-
 # Initialize local repo
 echo "# $repoName" >> README.md
 git init
